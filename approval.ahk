@@ -15,11 +15,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	CoordMode, Pixel, Window
 	CoordMode, Mouse, Window
 	WinGetPos, winX, winY, winWidth, winHeight, A
-	ImageSearch, foundX, foundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *TransBlack *100 commenticon.png
+	ImageSearch, foundX, foundY, 0, 0, winWidth, winHeight, *TransBlack *100 commenticon.png
 	if (ErrorLevel = 2)
    		MsgBox Could not conduct the search. 
 	else if (ErrorLevel = 1)
-   		MsgBox Image could not be found on the screen.
+   		MsgBox Comment box could not be found on the screen.
 	else
    		MouseClick, Left, foundX, foundY
    		WinClip.Clear()
